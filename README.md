@@ -63,6 +63,6 @@
 
 </p>
 
-![Visitor count](https://visitor-badge.laobi.icu/badge?page_id=EfeDeveloper.EfeDeveloper) <img src="https://www.theinsurancecenter.net/wp-content/uploads/2019/05/0_4Gzjgh9Y7Gu8KEtZ.gif" width="30">
+![Visitor count](https://visitor-badge.laobi.icu/badge?page_id=EfeDeveloper.EfeDeveloper) <img src="https://www.theinsurancecenter.net/wp-content/uploads/2019/05/0_4Gzjgh9Y7Gu8KEtZ.gif" width="60">
 
 <hr>
