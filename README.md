@@ -20,7 +20,7 @@
 
 - 💻 &nbsp; Java | PHP
 
-- 🌐 &nbsp; HTML | CSS | JavaScript | Bootstrap | ReactNative
+- 🌐 &nbsp; HTML | CSS | JavaScript | Bootstrap | ReactNative | ReactJs | AndtDesing
 
 - 🖥 &nbsp; Photoshop | after effects
 
