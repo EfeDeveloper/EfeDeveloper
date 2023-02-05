@@ -6,7 +6,7 @@
 </p>
 
 <h3 align="center" >
-    Technologist in software analysis and development, I work as a full stack developer, I´am from Colombia and I´am passionate about learning,
+    Technologist in software analysis and development, I work as a full stack developer, I'm from Colombia and I'm passionate about learning.
 </h3>
 
 <p align="center">
@@ -22,26 +22,18 @@
   />
 </p>
 
-<div>- 🌱 I’m currently learning **nodejs, react native**</div>
-<div>
-    - 👨‍💻 All of my projects are available at
+- 🌱 I’m currently learning **nodejs, react native**</div>
+- 👨‍💻 All of my projects are available at
     [https://github.com/EfeDeveloper](https://github.com/EfeDeveloper)
-</div>
-<div>
-    - 💬 Ask me about **javascript, react, nodejs, netlify, firebase, mongoDB,
+- 💬 Ask me about **javascript, react, nodejs, netlify, firebase, mongoDB,
     AntDesing.**
-</div>
-<div>- 📫 How to reach me **edy3.90@hotmail.com**</div>
-<div>
-    - 📄 Know about my experiences
+- 📫 How to reach me **edy3.90@hotmail.com**</div>
+- 📄 Know about my experiences
     [https://www.linkedin.com/in/edwin-ferney-villa-taborda/](https://www.linkedin.com/in/edwin-ferney-villa-taborda/)
-</div>
-<div>
-    - ⚡ Fun fact **The first "computer bug" was named after a real insect. This bug was
+- ⚡ Fun fact **The first "computer bug" was named after a real insect. This bug was
     found by Grace Hopper. The computer she was building started to crash and that's when
     she discovered a real moth in the system. Since then, when something fails in software
     or hardware, we call it a "bug".**
-</div>
 
 <h3 align="left">Connect with me:</h3>
   <p align="left">
