@@ -24,12 +24,12 @@
 
 - 🌱 I’m currently learning **nodejs, react native**</div>
 - 👨‍💻 All of my projects are available at
-    [https://github.com/EfeDeveloper](https://github.com/EfeDeveloper)
+    [github.com-EfeDeveloper](https://github.com/EfeDeveloper?tab=repositories)
 - 💬 Ask me about **javascript, react, nodejs, netlify, firebase, mongoDB,
     AntDesing.**
 - 📫 How to reach me **edy3.90@hotmail.com**</div>
 - 📄 Know about my experiences
-    [https://www.linkedin.com/in/edwin-ferney-villa-taborda/](https://www.linkedin.com/in/edwin-ferney-villa-taborda/)
+    [Linkedin.com](https://www.linkedin.com/in/edwin-ferney-villa-taborda/)
 - ⚡ Fun fact **The first "computer bug" was named after a real insect. This bug was
     found by Grace Hopper. The computer she was building started to crash and that's when
     she discovered a real moth in the system. Since then, when something fails in software
