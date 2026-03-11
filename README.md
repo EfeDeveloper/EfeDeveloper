@@ -124,24 +124,33 @@
 
 <div align="center">
 
-  <table style="margin: 0 auto;">
-    <tr>
-      <div>
-        <img src="https://streak-stats.demolab.com?user=efedeveloper&theme=default&background=ffffff"
-          alt="GitHub Streak" />
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=efedeveloper&show_icons=true&theme=default&bg_color=ffffff&include_all_commits=true&count_private=true"
-          alt="Edwin's GitHub Stats" />
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=efedeveloper&layout=compact&theme=default&bg_color=ffffff&langs_count=8"
-          alt="Top Languages" />
-      </div>
-    </tr>
-  </table>
-  <br />
-  <img
-    src="https://github-readme-activity-graph.vercel.app/graph?username=efedeveloper&bg_color=ffffff&color=0d1117&line=7c3aed&point=7c3aed&area=true&area_color=e8e0ff&hide_border=false"
-    alt="GitHub Activity Graph" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=efedeveloper&theme=tokyonight-duo&background=0d1117&hide_border=true" />
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=efedeveloper&theme=default&background=ffffff" />
+    <img src="https://streak-stats.demolab.com?user=efedeveloper&theme=default&background=ffffff" alt="GitHub Streak" />
+  </picture>
+
+<br /><br />
+
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=efedeveloper&show_icons=true&theme=tokyonight&bg_color=0d1117&hide_border=true&include_all_commits=true&count_private=true" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=efedeveloper&show_icons=true&theme=default&bg_color=ffffff&include_all_commits=true&count_private=true" />
+    <img src="https://github-readme-stats.vercel.app/api?username=efedeveloper&show_icons=true&theme=default&bg_color=ffffff&include_all_commits=true&count_private=true" alt="Edwin's GitHub Stats" />
+  </picture>
+
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=efedeveloper&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true&langs_count=8" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=efedeveloper&layout=compact&theme=default&bg_color=ffffff&langs_count=8" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=efedeveloper&layout=compact&theme=default&bg_color=ffffff&langs_count=8" alt="Top Languages" />
+  </picture>
+
+<br /><br />
+
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=efedeveloper&bg_color=0d1117&color=58A6FF&line=7c3aed&point=58A6FF&area=true&hide_border=true" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=efedeveloper&bg_color=ffffff&color=0d1117&line=7c3aed&point=7c3aed&area=true&area_color=e8e0ff&hide_border=false" />
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=efedeveloper&bg_color=ffffff&color=0d1117&line=7c3aed&point=7c3aed&area=true&area_color=e8e0ff&hide_border=false" alt="GitHub Activity Graph" width="100%" />
+  </picture>
 
 </div>
 
