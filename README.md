@@ -20,6 +20,7 @@
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=EfeDeveloper.EfeDeveloper&style=flat&color=0d1117&labelColor=0d1117&logo=github)
 ![Location](https://img.shields.io/badge/Colombia-%F0%9F%87%A8%F0%9F%87%B4-informational?style=flat&labelColor=0d1117&color=58A6FF)
 ![Remote](https://img.shields.io/badge/Open%20to%20Remote-%E2%9C%85-informational?style=flat&labelColor=0d1117&color=58A6FF)
+[![Generate Snake Animation](https://github.com/EfeDeveloper/EfeDeveloper/actions/workflows/snake.yml/badge.svg?branch=main)](https://github.com/EfeDeveloper/EfeDeveloper/actions/workflows/snake.yml)
 
 </div>
 
