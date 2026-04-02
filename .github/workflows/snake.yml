@@ -27,3 +27,23 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean old artifacts
+        if: always()
+        run: |
+          # Get all artifacts
+          ARTIFACTS=$(curl -s \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" | jq -r '.artifacts[] | .id')
+
+          # Delete each artifact
+          for ARTIFACT_ID in $ARTIFACTS; do
+            echo "Deleting artifact $ARTIFACT_ID..."
+            curl -s -X DELETE \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID"
+          done
+
+          echo "✅ Cleanup complete"
