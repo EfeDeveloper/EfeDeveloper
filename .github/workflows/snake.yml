@@ -12,11 +12,6 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Clean old artifacts
-        uses: geekyeggo/delete-artifact@v2
-        with:
-          name: '*'
-
       - name: Generate snake animation SVGs
         uses: Platane/snk/svg-only@v3
         with:
@@ -32,9 +27,3 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Clean artifacts after push
-        if: always()
-        uses: geekyeggo/delete-artifact@v2
-        with:
-          name: '*'
