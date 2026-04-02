@@ -28,12 +28,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Clean old artifacts
+      - name: Check artifacts status
         if: always()
         run: |
-          echo "🧹 Starting artifact cleanup..."
+          echo "📊 Checking artifacts status..."
 
-          # Get all artifacts with better error handling
+          # Get all artifacts
           RESPONSE=$(curl -s -w "\n%{http_code}" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
@@ -42,32 +42,18 @@ jobs:
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | head -n-1)
 
-          echo "HTTP Status: $HTTP_CODE"
-
           if [ "$HTTP_CODE" != "200" ]; then
-            echo "❌ Failed to fetch artifacts: $BODY"
+            echo "❌ Failed to fetch artifacts"
             exit 0
           fi
 
-          # Extract artifact IDs
-          ARTIFACT_IDS=$(echo "$BODY" | grep -o '"id": [0-9]*' | grep -o '[0-9]*' || true)
+          # Count artifacts
+          TOTAL=$(echo "$BODY" | grep -o '"total_count": [0-9]*' | grep -o '[0-9]*' || echo "0")
+          echo "📦 Total artifacts: $TOTAL"
 
-          if [ -z "$ARTIFACT_IDS" ]; then
-            echo "✅ No artifacts to delete"
-            exit 0
+          if [ "$TOTAL" -gt "0" ]; then
+            echo "📋 Artifacts found:"
+            echo "$BODY" | grep -o '"name": "[^"]*"' || true
+          else
+            echo "✅ No artifacts stored"
           fi
-
-          # Delete each artifact
-          echo "Found artifacts: $ARTIFACT_IDS"
-          for ARTIFACT_ID in $ARTIFACT_IDS; do
-            echo "🗑️  Deleting artifact $ARTIFACT_ID..."
-            DELETE_RESPONSE=$(curl -s -w "\n%{http_code}" -X DELETE \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID")
-
-            DELETE_CODE=$(echo "$DELETE_RESPONSE" | tail -n1)
-            echo "  Status: $DELETE_CODE"
-          done
-
-          echo "✅ Cleanup complete"
