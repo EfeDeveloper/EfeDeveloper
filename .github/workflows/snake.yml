@@ -31,19 +31,43 @@ jobs:
       - name: Clean old artifacts
         if: always()
         run: |
-          # Get all artifacts
-          ARTIFACTS=$(curl -s \
+          echo "🧹 Starting artifact cleanup..."
+
+          # Get all artifacts with better error handling
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" | jq -r '.artifacts[] | .id')
+            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n-1)
+
+          echo "HTTP Status: $HTTP_CODE"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "❌ Failed to fetch artifacts: $BODY"
+            exit 0
+          fi
+
+          # Extract artifact IDs
+          ARTIFACT_IDS=$(echo "$BODY" | grep -o '"id": [0-9]*' | grep -o '[0-9]*' || true)
+
+          if [ -z "$ARTIFACT_IDS" ]; then
+            echo "✅ No artifacts to delete"
+            exit 0
+          fi
 
           # Delete each artifact
-          for ARTIFACT_ID in $ARTIFACTS; do
-            echo "Deleting artifact $ARTIFACT_ID..."
-            curl -s -X DELETE \
+          echo "Found artifacts: $ARTIFACT_IDS"
+          for ARTIFACT_ID in $ARTIFACT_IDS; do
+            echo "🗑️  Deleting artifact $ARTIFACT_ID..."
+            DELETE_RESPONSE=$(curl -s -w "\n%{http_code}" -X DELETE \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID"
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID")
+
+            DELETE_CODE=$(echo "$DELETE_RESPONSE" | tail -n1)
+            echo "  Status: $DELETE_CODE"
           done
 
           echo "✅ Cleanup complete"
